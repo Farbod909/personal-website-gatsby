@@ -2,6 +2,10 @@ import React from "react";
 import styles from "./Sidebar.module.css";
 import { Link } from "gatsby";
 import meImg from "../../images/me.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedinIn, faGithubAlt } from "@fortawesome/free-brands-svg-icons";
+
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const ListLink = props => (
   <li>
@@ -29,6 +33,12 @@ class Sidebar extends React.Component {
           alt="Farbod Rafezy"
         ></img>
         <h3 style={{ fontSize: 28 }}>Farbod Rafezy</h3>
+        <span style={{ color: "gray" }}>
+          Irvine, CA{" "}
+          <span role="img" aria-label="pin">
+            📍
+          </span>
+        </span>
         <p>
           4th year Computer Science student at UCI; incoming Software Engineer
           at Google; little fish in a big pond.
@@ -43,6 +53,23 @@ class Sidebar extends React.Component {
           <ListLink to="/about" active={this.props.active === "about"}>
             About me
           </ListLink>
+        </ul>
+        <ul className={styles.socialList}>
+          <a href="https://github.com/Farbod909">
+            <li>
+              <FontAwesomeIcon icon={faGithubAlt} />
+            </li>
+          </a>
+          <a href="https://linkedin.com/in/frafezy">
+            <li>
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </li>
+          </a>
+          <a href="mailto:rafezyfarbod@gmail.com">
+            <li>
+              <FontAwesomeIcon icon={faEnvelope} />
+            </li>
+          </a>
         </ul>
       </aside>
     );

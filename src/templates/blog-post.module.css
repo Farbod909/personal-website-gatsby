@@ -6,3 +6,16 @@
 .blogPost * {
   max-width: 700px;
 }
+
+.backButton {
+  text-decoration: none;
+  border: 2px solid #3bba6c;
+  padding: 5px 12px 7px 10px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.backButton:hover {
+  color: white;
+  background-color: #3bba6c;
+}

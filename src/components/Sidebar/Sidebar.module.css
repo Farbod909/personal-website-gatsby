@@ -30,6 +30,7 @@
 .menuList li a {
   color: #324332;
   text-decoration: none;
+  transition: 0.2s;
 }
 
 .menuList li a:hover {
@@ -42,4 +43,29 @@
   color: #3bba6c;
   font-weight: 900;
   text-decoration: underline;
+}
+
+.socialList {
+  padding: 0;
+  list-style: none;
+}
+
+.socialList li {
+  display: inline-block;
+  border: 2px solid #324332;
+  border-radius: 100px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.socialList li:hover {
+  color: #3bba6c;
+  border-color: #3bba6c;
+}
+
+.socialList a {
+  color: #324332;
 }

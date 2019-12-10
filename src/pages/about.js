@@ -10,18 +10,17 @@ export default () => {
       <Content>
         <PageTitle>About me</PageTitle>
         <p>
-          Hello! My name is Farbod and I recently graduated from UC Irvine with
-          a bachelors degree in Computer Science.
+          Hello! My name is Farbod and I'm a fourth year Computer Science
+          student at UC Irvine specializing in Intelligent Systems.
         </p>
         <p>
           I’m from Tabriz, Iran and I’ve moved around all my life. Now I live in
-          Irvine, CA and go to school here too.
+          Irvine, CA but I'll be moving to the bay area soon.
         </p>
         <p>
-          I love going to the beach and swimming when I have free time. I’d love
-          to learn how to surf so I’m actively looking for ways to pursue that
-          hobby. I love listening to hip hop and R&B and my favorite musical
-          artist is EDEN.
+          I love going to the beach and swimming when I have free time. I love
+          learning and I want to learn graphic design and how to surf. I love
+          listening to hip hop and R&B and my favorite musical artist is EDEN.
         </p>
 
         <p>
