@@ -1,17 +1,20 @@
 import React from "react";
-import { graphql } from "gatsby";
-import Sidebar from "../components/Sidebar";
-import Content from "../components/Content";
+import { graphql, Link } from "gatsby";
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div>
-      <Sidebar />
-      <Content>
-        <h1 class="blog-post-title">{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </Content>
+    <div
+      style={{
+        maxWidth: 700,
+        margin: "auto"
+      }}
+    >
+      <Link to="/blog">&lt; Blog</Link>
+      <h1 style={{ fontSize: 54, lineHeight: "54px", marginBottom: 40 }}>
+        {post.frontmatter.title}
+      </h1>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   );
 };
