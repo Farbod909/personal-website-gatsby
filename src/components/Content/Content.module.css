@@ -1,0 +1,18 @@
+.content {
+  float: right;
+  width: calc(70% - 80px);
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 960px) {
+  .content {
+    width: calc(60% - 80px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    width: calc(100% - 80px);
+  }
+}

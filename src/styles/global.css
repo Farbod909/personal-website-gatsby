@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Overpass:400,700,900|Inconsolata&display=swap");
+
+html {
+  padding-top: 30px;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #324332;
+  max-width: 1000px;
+  margin: auto;
+  line-height: 28px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Overpass", sans-serif;
+  font-weight: 900;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 46px;
+}
+
+h2 {
+  font-size: 38px;
+  line-height: 38px;
+}
+
+a {
+  color: #3bba6c;
+}
+
+.blog-post-title {
+  font-size: 54px;
+  line-height: 54px;
+  margin-bottom: 40px;
+}
+
+pre {
+  background-color: #324332;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+code {
+  background-color: #324332;
+  color: white;
+  padding: 1px 5px 1px 5px;
+  border-radius: 5px;
+}

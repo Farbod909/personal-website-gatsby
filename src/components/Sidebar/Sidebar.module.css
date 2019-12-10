@@ -1,0 +1,45 @@
+.sidebar {
+  float: left;
+  width: calc(30% - 81px);
+  border-right: 1px solid #ddd;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media only screen and (max-width: 960px) {
+  .sidebar {
+    width: calc(40% - 81px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    border-right: none;
+    width: calc(100% - 80px);
+  }
+}
+
+.menuList {
+  padding: 0;
+  list-style: none;
+  font-family: "Overpass", sans-serif;
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.menuList li a {
+  color: #324332;
+  text-decoration: none;
+}
+
+.menuList li a:hover {
+  cursor: pointer;
+  color: #3bba6c;
+  text-decoration: underline;
+}
+
+.menuList li a.active {
+  color: #3bba6c;
+  font-weight: 900;
+  text-decoration: underline;
+}

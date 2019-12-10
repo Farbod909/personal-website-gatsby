@@ -1,17 +1,20 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
+import Sidebar from "../components/Sidebar";
+import Content from "../components/Content";
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
   return (
     <div>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
+      <Sidebar />
+      <Content>
+        <h1 class="blog-post-title">{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      </Content>
     </div>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($slug: String!) {
@@ -19,7 +22,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date(formatString: "MMMM D, YYYY")
       }
     }
   }
-`
+`;
