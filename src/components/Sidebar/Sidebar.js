@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
 import { Link } from "gatsby";
+import meImg from "../../images/me.jpg";
 
 const ListLink = props => (
   <li>
@@ -24,7 +25,7 @@ class Sidebar extends React.Component {
             height: 130,
             borderRadius: 130
           }}
-          src="http://www.farbodrafezy.com/images/me.jpg"
+          src={meImg}
           alt="Farbod Rafezy"
         ></img>
         <h3 style={{ fontSize: 28 }}>Farbod Rafezy</h3>
