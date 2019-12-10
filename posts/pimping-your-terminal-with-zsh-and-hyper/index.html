@@ -9,7 +9,7 @@
 <h2>Customizing ZSH</h2>
 <p>Now you'll have access to a file located at <code class="language-text">~/.zshrc</code>. This file is how we'll customize ZSH to our liking.</p>
 <p>In that file you'll find a line that says:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ZSH_THEME=&quot;robbyrussell&quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">ZSH_THEME</span><span class="token operator">=</span><span class="token string">"robbyrussell"</span></code></pre></div>
 <p>The default theme has been set to <code class="language-text">robbyrussell</code>, which I personally like, but it could use some fine tuning. There are plenty of other themes that come pre-loaded with ZSH. I'm a fan of the simpler themes but one of the fancy ones is called <code class="language-text">agnoster</code>. Let's go ahead and try that out.</p>
 <p>NOTE: After you change anything in <code class="language-text">~/.zshrc</code> you have to quit and re-open the terminal or do: <code class="language-text">source ~/.zshrc</code></p>
 <p>You'll notice a lot of question marks everywhere. That's because agnoster uses certain characters that aren't supported in traditional fonts. The font that the default mac terminal uses is "SF Mono" as of this writing.</p>
@@ -17,9 +17,9 @@
 <p>You can additionally find a list of all the built-in themes <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes">here</a>.</p>
 <p>You also may have noticed that the font colors are kinda funky when we use the <code class="language-text">agnoster</code> theme depending on what color scheme your Mac terminal has been set to. You can try to play around with the font colors and background colors for the Mac terminal until you get a combo that works well, but I personally use a seperate terminal app called <a href="https://hyper.is">Hyper</a>.</p>
 <p>Install this terminal and open a new window. You may notice that we're back to using Bash, well what was the point of all this crap then? Well, don't worry, we can use ZSH still, we just have to open Hyper preferences and find the line that says</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">shell: &#39;&#39;</code></pre></div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">shell<span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span></code></pre></div>
 <p>We need to change this to</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">shell: &#39;zsh&#39;</code></pre></div>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">shell<span class="token punctuation">:</span> <span class="token string">"zsh"</span><span class="token punctuation">;</span></code></pre></div>
 <p>Let's close and open Hyper and we should see everything's back to normal, phew!</p>
 <h2>Theming Hyper</h2>
 <p>Hyper is a really powerful terminal application and it's really easy to theme it. I'd first recommend browsing through some <a href="https://hyper.is/themes">Hyper themes</a> and installing one you like. It's really simple so I won't explain it here. After that, we can create our very own ZSH theme.</p>
@@ -30,46 +30,134 @@
 <p>I personally really like <code class="language-text">robbyrussell</code> but I wanted to make some minor adjustments, so I decided to make my own ZSH theme. Here's how you do that. If you navigate to <code class="language-text">~/.oh-my-zsh/custom</code> you'll notice a folder called <code class="language-text">themes</code>. In this folder, we can create files that end in a <code class="language-text">.zsh-theme</code> extension in order to create themes. So let's create our own theme and call it <code class="language-text">my_theme.zsh-theme</code></p>
 <h3>Creating our prompt</h3>
 <p>The prompt is the bread and butter of our theme. We can customize the prompt using a variable called <code class="language-text">PROMPT</code>. within your zsh theme file simply add the following line:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;&gt; &quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">"> "</span></code></pre></div>
 <p>Now, let's update our <code class="language-text">~/.zshrc</code> file's contents and restart our terminal window.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ZSH_THEME=&quot;my_theme&quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">ZSH_THEME</span><span class="token operator">=</span><span class="token string">"my_theme"</span></code></pre></div>
 <p>OK, that's a start... but this prompt gives us barely any information. Wouldn't you want to know which folder you're in at least? Well let's try:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%~ » &quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">"%~ » "</span></code></pre></div>
 <p>Much better! The <code class="language-text">%~</code> prompt expansion is what later get's "expanded" into the full directory starting from <code class="language-text">~</code>. I personally don't really care about seeing the <em>entire</em> directory, so I'm going to limit it to the most recent two folders using <code class="language-text">%2~</code>.</p>
 <h3>Adding some color</h3>
 <p>The way we assign colors to text in the shell is kind of weird, so bare with me here. If we write the following line and restart our terminal:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg[cyan]%}%2~ » &quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg</span>[cyan]%}%2~ » "</span></code></pre></div>
 <p>Cool! We have a cyan prompt! Now, let's start to type something... wait a minute why is <em>everything</em> cyan? This is because we have to reset the color back to the original, or else once we change the color of the text, everything else will be that color too.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg[cyan]%}%2~%{$reset_color%} » &quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg</span>[cyan]%}%2~%{<span class="token variable">$reset_color</span>%} » "</span></code></pre></div>
 <p>Alriiiiight, we're getting somewhere. I personally like my prompt bold, so we can do that by very simply changing to:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg_bold[cyan]%}%2~%{$reset_color%} » &quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg_bold</span>[cyan]%}%2~%{<span class="token variable">$reset_color</span>%} » "</span></code></pre></div>
 <p>We can also change the color of the little prompt indicator.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg_bold[cyan]%}%2~ %{$fg_bold[yellow]%}» %{$reset_color%}&quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg_bold</span>[cyan]%}%2~ %{<span class="token variable">$fg_bold</span>[yellow]%}» %{<span class="token variable">$reset_color</span>%}"</span></code></pre></div>
 <p>Our prompt is getting a little long, so let's split it up into variables.</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">local path_string = &quot;%{$fg_bold[cyan]%}%2~%{$reset_color%}&quot;
-local indicator = &quot;%{$fg_bold[yellow]%}»%{$reset_color%}&quot;
-PROMPT=&quot;${path_string} ${indicator} &quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">local</span> path_string <span class="token operator">=</span> <span class="token string">"%{<span class="token variable">$fg_bold</span>[cyan]%}%2~%{<span class="token variable">$reset_color</span>%}"</span>
+<span class="token builtin class-name">local</span> indicator <span class="token operator">=</span> <span class="token string">"%{<span class="token variable">$fg_bold</span>[yellow]%}»%{<span class="token variable">$reset_color</span>%}"</span>
+<span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${path_string}</span> <span class="token variable">${indicator}</span> "</span></code></pre></div>
 <p>This makes it a lot easier to read and will also come in handy if we ever wanna switch the order around.</p>
 <h3>Creating an RPROMPT</h3>
 <p>What's an RPROMPT? Well, it's exactly what it sounds like: a prompt that goes on the right hand side! This comes in handy for displaying info about the current git repository or timestamps or other miscellaneous info. If we add the following line to the end of our file and restart the terminal, let's observe what happens:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">RPROMPT=&quot;hello&quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">RPROMPT</span><span class="token operator">=</span><span class="token string">"hello"</span></code></pre></div>
 <p>Okay, that's interesting. It just says the word "hello" on the right hand side of the terminal. Not very useful though, so let's try something else:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">RPROMPT=&#39;$(git_prompt_info)&#39; # NOTE: Make sure to use single quotes (idk why)</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">RPROMPT</span><span class="token operator">=</span><span class="token string">'<span class="token variable"><span class="token variable">$(</span>git_prompt_info<span class="token variable">)</span></span>'</span> <span class="token comment"># NOTE: Make sure to use single quotes (idk why)</span></code></pre></div>
 <p>This comes built-in with the Oh My Zsh git plugin, but we can customize this too!</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg[green]%}&quot;
-ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%}&quot;
-ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[red]%} ⬡ &quot;
-ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[green]%} ⬢ &quot;</code></pre></div>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_PREFIX</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg</span>[green]%}"</span>
+<span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_SUFFIX</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$reset_color</span>%}"</span>
+<span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_DIRTY</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg</span>[red]%} ⬡ "</span>
+<span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_CLEAN</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg</span>[green]%} ⬢ "</span></code></pre></div>
 <p>Restart the terminal and voila!</p>
 <p>We can even re-arrange the items if we add this additionally:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git_custom_prompt() {
-    local branch=$(current_branch)
-    if [ -n &quot;$branch&quot; ]; then
-        echo &quot;$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$branch$ZSH_THEME_GIT_PROMPT_SUFFIX&quot;
-    fi
-}
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function-name function">git_custom_prompt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">branch</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>current_branch<span class="token variable">)</span></span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$branch</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>parse_git_dirty<span class="token variable">)</span></span><span class="token variable">$ZSH_THEME_GIT_PROMPT_PREFIX</span><span class="token variable">$branch</span><span class="token variable">$ZSH_THEME_GIT_PROMPT_SUFFIX</span>"</span>
+    <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
 
-RPROMPT=&#39;$(git_custom_prompt)&#39;</code></pre></div>
+<span class="token assign-left variable">RPROMPT</span><span class="token operator">=</span><span class="token string">'<span class="token variable"><span class="token variable">$(</span>git_custom_prompt<span class="token variable">)</span></span>'</span></code></pre></div>
+<h2>My personal theme</h2>
+<p>This is what my final terminal setup looks like:</p>
+<p><img src="https://i.imgur.com/ZVMsDYD.png" alt="Pimped out terminal"></p>
+<p>and this is the code for it. Feel free to use it or modify it until it suits your needs 😊</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token builtin class-name">local</span> <span class="token assign-left variable">ret_status</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg_bold</span>[yellow]%}➜ "</span> <span class="token comment"># I don't want the arrow to change colors even if the previous command was invalid.</span>
+<span class="token builtin class-name">local</span> <span class="token assign-left variable">path_string</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg</span>[cyan]%}%2~%{<span class="token variable">$reset_color</span>%}"</span> <span class="token comment"># Only show the last two folders</span>
+
+<span class="token comment"># ***** GIT STUFF *****</span>
+
+<span class="token assign-left variable">GIT_REBASE</span><span class="token operator">=</span><span class="token string">"<span class="token entity" title="\uE0A0">\uE0A0</span>"</span>
+<span class="token assign-left variable">GIT_UNPULLED</span><span class="token operator">=</span><span class="token string">"⇣"</span>
+<span class="token assign-left variable">GIT_UNPUSHED</span><span class="token operator">=</span><span class="token string">"⇡"</span>
+
+<span class="token function-name function">colorize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"%F{<span class="token variable">$1</span>}<span class="token variable">$2</span>%f"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">git_rebase_check</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token assign-left variable">git_dir</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> rev-parse --git-dir<span class="token variable">)</span></span>
+
+  <span class="token keyword">if</span> <span class="token builtin class-name">test</span> -d <span class="token string">"<span class="token variable">$git_dir</span>/rebase-merge"</span> -o -d <span class="token string">"<span class="token variable">$git_dir</span>/rebase-apply"</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token variable">$GIT_REBASE</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">git_remote_check</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token assign-left variable">local_commit</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> rev-parse <span class="token string">"@"</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span><span class="token variable">)</span></span>
+  <span class="token assign-left variable">remote_commit</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> rev-parse <span class="token string">"@{u}"</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span><span class="token variable">)</span></span>
+  <span class="token assign-left variable">common_base</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> merge-base <span class="token string">"@"</span> <span class="token string">"@{u}"</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span><span class="token file-descriptor important">&amp;1</span><span class="token variable">)</span></span> <span class="token comment"># last common commit</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$local_commit</span> <span class="token operator">!=</span> <span class="token variable">$remote_commit</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$common_base</span> <span class="token operator">==</span> <span class="token variable">$remote_commit</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token builtin class-name">echo</span> <span class="token variable">$GIT_UNPUSHED</span>
+    <span class="token keyword">elif</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable">$common_base</span> <span class="token operator">==</span> <span class="token variable">$local_commit</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token builtin class-name">echo</span> <span class="token variable">$GIT_UNPULLED</span>
+    <span class="token keyword">else</span>
+      <span class="token builtin class-name">echo</span> <span class="token variable">$GIT_UNPUSHED</span> <span class="token variable">$GIT_UNPULLED</span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token function-name function">git_symbol</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>git_rebase_check<span class="token variable">)</span></span> <span class="token variable"><span class="token variable">$(</span>git_remote_check<span class="token variable">)</span></span>"</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">git_time_since_commit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> log <span class="token operator">&amp;></span> /dev/null <span class="token operator">|</span> <span class="token function">grep</span> -c <span class="token string">"^fatal: bad default revision"</span><span class="token variable">)</span></span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment"># Get the last commit.</span>
+    <span class="token assign-left variable">last_commit</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> log --pretty<span class="token operator">=</span>format:<span class="token string">'%at'</span> -1 <span class="token operator"><span class="token file-descriptor important">2</span>></span> /dev/null<span class="token variable">)</span></span>
+    <span class="token assign-left variable">now</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">date</span> +%s<span class="token variable">)</span></span>
+    <span class="token assign-left variable">seconds_since_last_commit</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>now <span class="token operator">-</span> last_commit<span class="token variable">))</span></span>
+
+    <span class="token comment"># Totals</span>
+    <span class="token assign-left variable">minutes</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>seconds_since_last_commit <span class="token operator">/</span> <span class="token number">60</span><span class="token variable">))</span></span>
+    <span class="token assign-left variable">hours</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>seconds_since_last_commit <span class="token operator">/</span> <span class="token number">3600</span><span class="token variable">))</span></span>
+
+    <span class="token comment"># Sub-hours and sub-minutes</span>
+    <span class="token assign-left variable">days</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>seconds_since_last_commit <span class="token operator">/</span> <span class="token number">86400</span><span class="token variable">))</span></span>
+    <span class="token assign-left variable">sub_hours</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>hours <span class="token operator">%</span> <span class="token number">24</span><span class="token variable">))</span></span>
+    <span class="token assign-left variable">sub_minutes</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>minutes <span class="token operator">%</span> <span class="token number">60</span><span class="token variable">))</span></span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$hours</span> -gt <span class="token number">24</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">$(</span>colorize <span class="token string">"red"</span> <span class="token string">"<span class="token variable">${days}</span>d"</span><span class="token variable">)</span></span>
+    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$minutes</span> -gt <span class="token number">60</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">$(</span>colorize <span class="token string">"white"</span> <span class="token string">"<span class="token variable">${sub_hours}</span>h<span class="token variable">${sub_minutes}</span>m"</span><span class="token variable">)</span></span>
+    <span class="token keyword">else</span>
+      <span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">$(</span>colorize <span class="token string">"green"</span> <span class="token string">"<span class="token variable">${minutes}</span>m"</span><span class="token variable">)</span></span>
+    <span class="token keyword">fi</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token function-name function">git_custom_prompt</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token builtin class-name">local</span> <span class="token assign-left variable">branch</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>current_branch<span class="token variable">)</span></span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$branch</span>"</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$ZSH_THEME_GIT_PROMPT_PREFIX</span><span class="token variable"><span class="token variable">$(</span>git_symbol<span class="token variable">)</span></span> <span class="token variable"><span class="token variable">$(</span>colorize <span class="token number">242</span> $branch<span class="token variable">)</span></span> : <span class="token variable"><span class="token variable">$(</span>git_time_since_commit<span class="token variable">)</span></span> : <span class="token variable"><span class="token variable">$(</span>parse_git_dirty<span class="token variable">)</span></span><span class="token variable">$ZSH_THEME_GIT_PROMPT_SUFFIX</span>"</span>
+  <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_PREFIX</span><span class="token operator">=</span><span class="token string">"%{<span class="token variable">$fg_bold</span>[white]%}"</span>
+<span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_SUFFIX</span><span class="token operator">=</span><span class="token string">""</span>
+<span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_DIRTY</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>colorize <span class="token string">"red"</span> <span class="token string">"⬡"</span><span class="token variable">)</span></span>
+<span class="token assign-left variable">ZSH_THEME_GIT_PROMPT_CLEAN</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>colorize <span class="token string">"green"</span> <span class="token string">"⬢"</span><span class="token variable">)</span></span>
+
+<span class="token comment"># ***** END GIT STUFF *****</span>
+
+<span class="token assign-left variable">PROMPT</span><span class="token operator">=</span><span class="token string">'<span class="token variable">${ret_status}</span> <span class="token variable">${path_string}</span> %{<span class="token variable">$fg_bold</span>[white]%}'</span>
+<span class="token assign-left variable">RPROMPT</span><span class="token operator">=</span><span class="token string">'<span class="token variable"><span class="token variable">$(</span>git_custom_prompt<span class="token variable">)</span></span>'</span></code></pre></div>
 <h2>Wrapping up</h2>
 <p>At this point, we've done a good amount of customization, and there's a lot more you can do too! You can look at some other built-in themes you like and cherry pick pieces that you like. All the built-in themes are in <code class="language-text">~/.oh-my-zsh/themes</code></p>
 <p>Also check out some prompt expansions you might find useful <a href="http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html">here</a>.</p></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/pimping-your-terminal-with-zsh-and-hyper";window.webpackCompilationHash="e6a7ec55ca15882d730c";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-115b7132dd0021231385.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-5a20a98bda18e765bf84.js"],"component---src-pages-about-js":["/component---src-pages-about-js-4b04dec8ad8d5e7baf4f.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-3feb65af03fdebed13c2.js"],"component---src-pages-index-js":["/component---src-pages-index-js-6280c5bb91e60ced4bdc.js"]};/*]]>*/</script><script src="/webpack-runtime-4b0387a0ad1b96d6ee95.js" async=""></script><script src="/styles-17424fa9d97667c4c507.js" async=""></script><script src="/app-115b7132dd0021231385.js" async=""></script><script src="/1-a1ce7ab0107f8c3d85ca.js" async=""></script><script src="/component---src-templates-blog-post-js-5a20a98bda18e765bf84.js" async=""></script></body></html>
