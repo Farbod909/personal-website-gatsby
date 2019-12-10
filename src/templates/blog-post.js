@@ -1,15 +1,11 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import styles from "./blog-post.module.css";
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div
-      style={{
-        maxWidth: 700,
-        margin: "auto"
-      }}
-    >
+    <div className={styles.blogPost}>
       <Link to="/blog">&lt; Blog</Link>
       <h1 style={{ fontSize: 54, lineHeight: "54px", marginBottom: 40 }}>
         {post.frontmatter.title}
