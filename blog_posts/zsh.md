@@ -3,6 +3,8 @@ title: "Pimping Your Terminal with ZSH and Hyper"
 date: "2019-08-02"
 ---
 
+![Pimped out terminal](https://i.imgur.com/ZVMsDYD.png)
+
 Traditionally, Macs come with a Terminal app that runs Bash. Bash is fine, but it could get better. In this post we'll cover how to install ZSH and Hyper for a more personalized and easy-to-use experience.
 
 Note: macOS Catalina and newer already have ZSH as the default shell instead of Bash.
@@ -171,11 +173,7 @@ RPROMPT='$(git_custom_prompt)'
 
 ## My personal theme
 
-This is what my final terminal setup looks like:
-
-![Pimped out terminal](https://i.imgur.com/ZVMsDYD.png)
-
-and this is the code for it. Feel free to use it or modify it until it suits your needs 😊
+This is the code for my personal theme which is displayed at the top of this blog post. Feel free to use it or modify it until it suits your needs 😊
 
 ```bash
 local ret_status="%{$fg_bold[yellow]%}➜ " # I don't want the arrow to change colors even if the previous command was invalid.
