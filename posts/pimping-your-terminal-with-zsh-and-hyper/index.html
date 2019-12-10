@@ -1,30 +1,25 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.599440a6dfd0f587ffca.css">@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Overpass:400,700,900|Inconsolata&display=swap);html{padding-top:30px;font-family:Lato,sans-serif;font-size:16px;color:#324332;max-width:1000px;margin:auto;line-height:28px}p{margin-bottom:30px}h1,h2,h3,h4,h5,h6{font-family:Overpass,sans-serif;font-weight:900;margin-top:25px;margin-bottom:20px}h1{font-size:46px;line-height:46px}h2{font-size:38px;line-height:38px}a{color:#3bba6c}.blog-post-title{font-size:54px;line-height:54px;margin-bottom:40px}pre{padding:20px;overflow:auto}code,pre{background-color:#324332;color:#fff;border-radius:5px}code{padding:1px 5px}.Sidebar-module--sidebar--31uFS{float:left;width:calc(30% - 81px);border-right:1px solid #ddd;padding-left:40px;padding-right:40px}@media only screen and (max-width:960px){.Sidebar-module--sidebar--31uFS{width:calc(40% - 81px)}}@media only screen and (max-width:600px){.Sidebar-module--sidebar--31uFS{border-right:none;width:calc(100% - 80px)}}.Sidebar-module--menuList--2hPot{padding:0;list-style:none;font-family:Overpass,sans-serif;font-size:20px;line-height:40px}.Sidebar-module--menuList--2hPot li a{color:#324332;text-decoration:none}.Sidebar-module--menuList--2hPot li a:hover{cursor:pointer;color:#3bba6c;text-decoration:underline}.Sidebar-module--menuList--2hPot li a.Sidebar-module--active--AmL6r{color:#3bba6c;font-weight:900;text-decoration:underline}.Content-module--content--ifVFL{float:right;width:calc(70% - 80px);padding-left:40px;padding-right:40px}@media only screen and (max-width:960px){.Content-module--content--ifVFL{width:calc(60% - 80px)}}@media only screen and (max-width:600px){.Content-module--content--ifVFL{width:calc(100% - 80px)}}</style><meta name="generator" content="Gatsby 2.13.25"/><link as="script" rel="preload" href="/app-f6579e9eaeaac84e42a2.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-dc6f0aee77f9d3fc0e14.js"/><link as="script" rel="preload" href="/styles-1b0b8c4e23c73823f91d.js"/><link as="script" rel="preload" href="/webpack-runtime-f33c4aa133bf6b9fb52c.js"/><link as="fetch" rel="preload" href="/page-data/posts/pimping-your-terminal-with-zsh-and-hyper/page-data.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div><aside class="Sidebar-module--sidebar--31uFS"><img style="width:130px;height:130px;border-radius:130px" src="/static/me-fde8b44b0d4589b352843b40ebe60934.jpg" alt="Farbod Rafezy"/><h3 style="font-size:28px">Farbod Rafezy</h3><p>4th year Computer Science student at UCI; incoming Software Engineer at Google; little fish in a big pond.</p><ul class="Sidebar-module--menuList--2hPot"><li><a class="" href="/">Portfolio</a></li><li><a class="" href="/blog">Blog</a></li><li><a class="" href="/about">About me</a></li></ul></aside><section class="Content-module--content--ifVFL"><h1 class="blog-post-title">Pimping Your Terminal with ZSH and Hyper</h1><div><p>Traditionally, Macs come with a Terminal app that runs Bash. Bash is fine, but it could get better. In this post we'll cover how to install ZSH and Hyper for a more personalized and easy-to-use experience.</p>
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.2a34fe0f5131c90ad8e5.css">@import url(https://fonts.googleapis.com/css?family=Lato:400,700|Overpass:400,700,900|Inconsolata&display=swap);html{padding-top:30px;font-family:Lato,sans-serif;font-size:16px;color:#324332;max-width:1000px;margin:auto;line-height:28px}p{margin-bottom:30px}h1,h2,h3,h4,h5,h6{font-family:Overpass,sans-serif;font-weight:900;margin-top:25px;margin-bottom:20px}h1{font-size:46px;line-height:46px}h2{font-size:38px;line-height:38px}h3{font-size:24px;line-height:24px}a{color:#3bba6c}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.Sidebar-module--sidebar--31uFS{float:left;width:calc(30% - 81px);border-right:1px solid #ddd;padding-left:40px;padding-right:40px}@media only screen and (max-width:960px){.Sidebar-module--sidebar--31uFS{width:calc(40% - 81px)}}@media only screen and (max-width:600px){.Sidebar-module--sidebar--31uFS{border-right:none;width:calc(100% - 80px)}}.Sidebar-module--menuList--2hPot{padding:0;list-style:none;font-family:Overpass,sans-serif;font-size:20px;line-height:40px}.Sidebar-module--menuList--2hPot li a{color:#324332;text-decoration:none}.Sidebar-module--menuList--2hPot li a:hover{cursor:pointer;color:#3bba6c;text-decoration:underline}.Sidebar-module--menuList--2hPot li a.Sidebar-module--active--AmL6r{color:#3bba6c;font-weight:900;text-decoration:underline}.Content-module--content--ifVFL{float:right;width:calc(70% - 80px);padding-left:40px;padding-right:40px}@media only screen and (max-width:960px){.Content-module--content--ifVFL{width:calc(60% - 80px)}}@media only screen and (max-width:600px){.Content-module--content--ifVFL{width:calc(100% - 80px)}}</style><meta name="generator" content="Gatsby 2.13.25"/><link as="script" rel="preload" href="/component---src-templates-blog-post-js-1a3546de0d85cde291fa.js"/><link as="script" rel="preload" href="/styles-66a022d0db2ec43ccd23.js"/><link as="script" rel="preload" href="/app-f91a8ceb19c486a5e76e.js"/><link as="script" rel="preload" href="/webpack-runtime-fb3874ba8e17d51e3d44.js"/><link as="fetch" rel="preload" href="/page-data/posts/pimping-your-terminal-with-zsh-and-hyper/page-data.json" crossorigin="use-credentials"/></head><body><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div style="max-width:700px;margin:auto"><a href="/blog">&lt; Blog</a><h1 style="font-size:54px;line-height:54px;margin-bottom:40px">Pimping Your Terminal with ZSH and Hyper</h1><div><p>Traditionally, Macs come with a Terminal app that runs Bash. Bash is fine, but it could get better. In this post we'll cover how to install ZSH and Hyper for a more personalized and easy-to-use experience.</p>
 <p>Note: macOS Catalina and newer already have ZSH as the default shell instead of Bash.</p>
 <h2>Installing ZSH with Homebrew</h2>
-<pre><code>$ brew install zsh
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">$ brew install zsh</code></pre></div>
 <p>That was easy. Now we're able to use ZSH's slightly more convenient features such as autocompletion and automatic cd, but there's a lot more. In my opinion, the most important benefits that ZSH provides is adding plugins and themes, and the easiest way to do that is to install Oh My Zsh.</p>
 <h2>Installing Oh My ZSH</h2>
-<pre><code>$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">$ sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)&quot;</code></pre></div>
 <p>You will be prompted to use ZSH as your default shell. I said "Yes" to this option.</p>
 <h2>Customizing ZSH</h2>
-<p>Now you'll have access to a file located at <code>~/.zshrc</code>. This file is how we'll customize ZSH to our liking.</p>
+<p>Now you'll have access to a file located at <code class="language-text">~/.zshrc</code>. This file is how we'll customize ZSH to our liking.</p>
 <p>In that file you'll find a line that says:</p>
-<pre><code>ZSH_THEME="robbyrussell"
-</code></pre>
-<p>The default theme has been set to <code>robbyrussell</code>, which I personally like, but it could use some fine tuning. There are plenty of other themes that come pre-loaded with ZSH. I'm a fan of the simpler themes but one of the fancy ones is called <code>agnoster</code>. Let's go ahead and try that out. </p>
-<p>NOTE: After you change anything in <code>~/.zshrc</code> you have to quit and re-open the terminal or do: <code>source ~/.zshrc</code></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ZSH_THEME=&quot;robbyrussell&quot;</code></pre></div>
+<p>The default theme has been set to <code class="language-text">robbyrussell</code>, which I personally like, but it could use some fine tuning. There are plenty of other themes that come pre-loaded with ZSH. I'm a fan of the simpler themes but one of the fancy ones is called <code class="language-text">agnoster</code>. Let's go ahead and try that out.</p>
+<p>NOTE: After you change anything in <code class="language-text">~/.zshrc</code> you have to quit and re-open the terminal or do: <code class="language-text">source ~/.zshrc</code></p>
 <p>You'll notice a lot of question marks everywhere. That's because agnoster uses certain characters that aren't supported in traditional fonts. The font that the default mac terminal uses is "SF Mono" as of this writing.</p>
 <p>If we wanna get rid of the question marks, we have to donwload Powerline fonts. You can easily find powerline fonts on the internet. In fact, they're just like downloading and installing any other font on your mac. For example, you can download this <a href="https://github.com/abertsch/Menlo-for-Powerline">Menlo for Powerline Font</a>, double click it and install. After you've installed it, you can go to your terminal settings and change the font to your newly installed font and the question marks should be replaced with meaningful characters.</p>
 <p>You can additionally find a list of all the built-in themes <a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Themes">here</a>.</p>
-<p>You also may have noticed that the font colors are kinda funky when we use the <code>agnoster</code> theme depending on what color scheme your Mac terminal has been set to. You can try to play around with the font colors and background colors for the Mac terminal until you get a combo that works well, but I personally use a seperate terminal app called <a href="https://hyper.is">Hyper</a>.</p>
+<p>You also may have noticed that the font colors are kinda funky when we use the <code class="language-text">agnoster</code> theme depending on what color scheme your Mac terminal has been set to. You can try to play around with the font colors and background colors for the Mac terminal until you get a combo that works well, but I personally use a seperate terminal app called <a href="https://hyper.is">Hyper</a>.</p>
 <p>Install this terminal and open a new window. You may notice that we're back to using Bash, well what was the point of all this crap then? Well, don't worry, we can use ZSH still, we just have to open Hyper preferences and find the line that says</p>
-<pre><code>shell: ''
-</code></pre>
-<p>We need to change this to </p>
-<pre><code>shell: 'zsh'
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">shell: &#39;&#39;</code></pre></div>
+<p>We need to change this to</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">shell: &#39;zsh&#39;</code></pre></div>
 <p>Let's close and open Hyper and we should see everything's back to normal, phew!</p>
 <h2>Theming Hyper</h2>
 <p>Hyper is a really powerful terminal application and it's really easy to theme it. I'd first recommend browsing through some <a href="https://hyper.is/themes">Hyper themes</a> and installing one you like. It's really simple so I won't explain it here. After that, we can create our very own ZSH theme.</p>
@@ -32,61 +27,49 @@
 <p>It might be a little confusing, so I'll address it here. Hyper is just a terminal application, but ZSH is a shell, aka a program that runs within your terminal window. What comes built-in with macOS (at least up until Catalina) is Terminal.app and Bash. In this tutorial we're switching Terminal to Hyper and Bash to ZSH.</p>
 <p>A Hyper theme controls the look and feel of the window (background color, font, etc.), whereas a ZSH theme controls what content is actually displayed.</p>
 <h2>Creating your very own ZSH Theme</h2>
-<p>I personally really like <code>robbyrussell</code> but I wanted to make some minor adjustments, so I decided to make my own ZSH theme. Here's how you do that. If you navigate to <code>~/.oh-my-zsh/custom</code> you'll notice a folder called <code>themes</code>. In this folder, we can create files that end in a <code>.zsh-theme</code> extension in order to create themes. So let's create our own theme and call it <code>my_theme.zsh-theme</code></p>
+<p>I personally really like <code class="language-text">robbyrussell</code> but I wanted to make some minor adjustments, so I decided to make my own ZSH theme. Here's how you do that. If you navigate to <code class="language-text">~/.oh-my-zsh/custom</code> you'll notice a folder called <code class="language-text">themes</code>. In this folder, we can create files that end in a <code class="language-text">.zsh-theme</code> extension in order to create themes. So let's create our own theme and call it <code class="language-text">my_theme.zsh-theme</code></p>
 <h3>Creating our prompt</h3>
-<p>The prompt is the bread and butter of our theme. We can customize the prompt using a variable called <code>PROMPT</code>. within your zsh theme file simply add the following line:</p>
-<pre><code>PROMPT="> "
-</code></pre>
-<p>Now, let's update our <code>~/.zshrc</code> file's contents and restart our terminal window.</p>
-<pre><code>ZSH_THEME="my_theme"
-</code></pre>
+<p>The prompt is the bread and butter of our theme. We can customize the prompt using a variable called <code class="language-text">PROMPT</code>. within your zsh theme file simply add the following line:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;&gt; &quot;</code></pre></div>
+<p>Now, let's update our <code class="language-text">~/.zshrc</code> file's contents and restart our terminal window.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ZSH_THEME=&quot;my_theme&quot;</code></pre></div>
 <p>OK, that's a start... but this prompt gives us barely any information. Wouldn't you want to know which folder you're in at least? Well let's try:</p>
-<pre><code>PROMPT="%~ » "
-</code></pre>
-<p>Much better! The <code>%~</code> prompt expansion is what later get's "expanded" into the full directory starting from <code>~</code>. I personally don't really care about seeing the <em>entire</em> directory, so I'm going to limit it to the most recent two folders using <code>%2~</code>.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%~ » &quot;</code></pre></div>
+<p>Much better! The <code class="language-text">%~</code> prompt expansion is what later get's "expanded" into the full directory starting from <code class="language-text">~</code>. I personally don't really care about seeing the <em>entire</em> directory, so I'm going to limit it to the most recent two folders using <code class="language-text">%2~</code>.</p>
 <h3>Adding some color</h3>
 <p>The way we assign colors to text in the shell is kind of weird, so bare with me here. If we write the following line and restart our terminal:</p>
-<pre><code>PROMPT="%{$fg[cyan]%}%2~ » "
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg[cyan]%}%2~ » &quot;</code></pre></div>
 <p>Cool! We have a cyan prompt! Now, let's start to type something... wait a minute why is <em>everything</em> cyan? This is because we have to reset the color back to the original, or else once we change the color of the text, everything else will be that color too.</p>
-<pre><code>PROMPT="%{$fg[cyan]%}%2~%{$reset_color%} » "
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg[cyan]%}%2~%{$reset_color%} » &quot;</code></pre></div>
 <p>Alriiiiight, we're getting somewhere. I personally like my prompt bold, so we can do that by very simply changing to:</p>
-<pre><code>PROMPT="%{$fg_bold[cyan]%}%2~%{$reset_color%} » "
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg_bold[cyan]%}%2~%{$reset_color%} » &quot;</code></pre></div>
 <p>We can also change the color of the little prompt indicator.</p>
-<pre><code>PROMPT="%{$fg_bold[cyan]%}%2~ %{$fg_bold[yellow]%}» %{$reset_color%}"
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">PROMPT=&quot;%{$fg_bold[cyan]%}%2~ %{$fg_bold[yellow]%}» %{$reset_color%}&quot;</code></pre></div>
 <p>Our prompt is getting a little long, so let's split it up into variables.</p>
-<pre><code>local path_string = "%{$fg_bold[cyan]%}%2~%{$reset_color%}"
-local indicator = "%{$fg_bold[yellow]%}»%{$reset_color%}"
-PROMPT="${path_string} ${indicator} "
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">local path_string = &quot;%{$fg_bold[cyan]%}%2~%{$reset_color%}&quot;
+local indicator = &quot;%{$fg_bold[yellow]%}»%{$reset_color%}&quot;
+PROMPT=&quot;${path_string} ${indicator} &quot;</code></pre></div>
 <p>This makes it a lot easier to read and will also come in handy if we ever wanna switch the order around.</p>
 <h3>Creating an RPROMPT</h3>
 <p>What's an RPROMPT? Well, it's exactly what it sounds like: a prompt that goes on the right hand side! This comes in handy for displaying info about the current git repository or timestamps or other miscellaneous info. If we add the following line to the end of our file and restart the terminal, let's observe what happens:</p>
-<pre><code>RPROMPT="hello"
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">RPROMPT=&quot;hello&quot;</code></pre></div>
 <p>Okay, that's interesting. It just says the word "hello" on the right hand side of the terminal. Not very useful though, so let's try something else:</p>
-<pre><code>RPROMPT='$(git_prompt_info)' # NOTE: Make sure to use single quotes (idk why)
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">RPROMPT=&#39;$(git_prompt_info)&#39; # NOTE: Make sure to use single quotes (idk why)</code></pre></div>
 <p>This comes built-in with the Oh My Zsh git plugin, but we can customize this too!</p>
-<pre><code>ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} ⬡ "
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ⬢ "
-</code></pre>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ZSH_THEME_GIT_PROMPT_PREFIX=&quot;%{$fg[green]%}&quot;
+ZSH_THEME_GIT_PROMPT_SUFFIX=&quot;%{$reset_color%}&quot;
+ZSH_THEME_GIT_PROMPT_DIRTY=&quot;%{$fg[red]%} ⬡ &quot;
+ZSH_THEME_GIT_PROMPT_CLEAN=&quot;%{$fg[green]%} ⬢ &quot;</code></pre></div>
 <p>Restart the terminal and voila!</p>
 <p>We can even re-arrange the items if we add this additionally:</p>
-<pre><code>git_custom_prompt() {
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">git_custom_prompt() {
     local branch=$(current_branch)
-    if [ -n "$branch" ]; then
-        echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$branch$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    if [ -n &quot;$branch&quot; ]; then
+        echo &quot;$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$branch$ZSH_THEME_GIT_PROMPT_SUFFIX&quot;
     fi
 }
 
-RPROMPT='$(git_custom_prompt)'
-</code></pre>
+RPROMPT=&#39;$(git_custom_prompt)&#39;</code></pre></div>
 <h2>Wrapping up</h2>
-<p>At this point, we've done a good amount of customization, and there's a lot more you can do too! You can look at some other built-in themes you like and cherry pick pieces that you like. All the built-in themes are in <code>~/.oh-my-zsh/themes</code></p>
-<p>Also check out some prompt expansions you might find useful <a href="http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html">here</a>.</p></div></section></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/pimping-your-terminal-with-zsh-and-hyper";window.webpackCompilationHash="ff9b07ed1832531606a0";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f6579e9eaeaac84e42a2.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-dc6f0aee77f9d3fc0e14.js"],"component---src-pages-about-js":["/component---src-pages-about-js-4df974f0465fa5d3db11.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-d251d2826c3d06ce5ce6.js"],"component---src-pages-index-js":["/component---src-pages-index-js-c072a3fdc8e45d32e828.js"]};/*]]>*/</script><script src="/webpack-runtime-f33c4aa133bf6b9fb52c.js" async=""></script><script src="/styles-1b0b8c4e23c73823f91d.js" async=""></script><script src="/component---src-templates-blog-post-js-dc6f0aee77f9d3fc0e14.js" async=""></script><script src="/app-f6579e9eaeaac84e42a2.js" async=""></script></body></html>
+<p>At this point, we've done a good amount of customization, and there's a lot more you can do too! You can look at some other built-in themes you like and cherry pick pieces that you like. All the built-in themes are in <code class="language-text">~/.oh-my-zsh/themes</code></p>
+<p>Also check out some prompt expansions you might find useful <a href="http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html">here</a>.</p></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/posts/pimping-your-terminal-with-zsh-and-hyper";window.webpackCompilationHash="11b5f15fdd4d318e7fca";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f91a8ceb19c486a5e76e.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-1a3546de0d85cde291fa.js"],"component---src-pages-about-js":["/component---src-pages-about-js-1a021191447bc3048271.js"],"component---src-pages-blog-js":["/component---src-pages-blog-js-7888c94d4fd6ce00e624.js"],"component---src-pages-index-js":["/component---src-pages-index-js-a90bdecd8d5fce135700.js"]};/*]]>*/</script><script src="/webpack-runtime-fb3874ba8e17d51e3d44.js" async=""></script><script src="/app-f91a8ceb19c486a5e76e.js" async=""></script><script src="/styles-66a022d0db2ec43ccd23.js" async=""></script><script src="/component---src-templates-blog-post-js-1a3546de0d85cde291fa.js" async=""></script></body></html>
