@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 export default () => {
   return (
     <div>
-      <SEO title="Farbod Rafezy - About me" />
+      <SEO title="About me" />
       <Sidebar active="about" />
       <Content>
         <PageTitle>About me</PageTitle>

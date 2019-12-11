@@ -37,7 +37,7 @@ const Post = props => (
 export default ({ data }) => {
   return (
     <div>
-      <SEO title="Farbod Rafezy - Blog" />
+      <SEO title="Blog" />
       <Sidebar active="blog" />
       <Content>
         <PageTitle>Blog</PageTitle>

@@ -57,7 +57,7 @@ const PortfolioItem = props => (
 export default () => {
   return (
     <div>
-      <SEO title="Farbod Rafezy - Portfolio" />
+      <SEO title="Portfolio" />
       <Sidebar active="portfolio" />
       <Content>
         <PageTitle>Portfolio</PageTitle>
