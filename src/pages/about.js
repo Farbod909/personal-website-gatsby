@@ -2,10 +2,12 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import Content from "../components/Content";
 import PageTitle from "../components/PageTitle";
+import SEO from "../components/seo";
 
 export default () => {
   return (
     <div>
+      <SEO title="Farbod Rafezy - About me" />
       <Sidebar active="about" />
       <Content>
         <PageTitle>About me</PageTitle>

@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import Sidebar from "../components/Sidebar";
 import Content from "../components/Content";
 import PageTitle from "../components/PageTitle";
+import SEO from "../components/seo";
 
 const Post = props => (
   <div key={props.node.id}>
@@ -36,6 +37,7 @@ const Post = props => (
 export default ({ data }) => {
   return (
     <div>
+      <SEO title="Farbod Rafezy - Blog" />
       <Sidebar active="blog" />
       <Content>
         <PageTitle>Blog</PageTitle>

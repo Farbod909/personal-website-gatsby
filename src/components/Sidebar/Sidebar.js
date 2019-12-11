@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
 import { Link } from "gatsby";
-import meImg from "../../images/me.jpg";
+import meImg from "../../images/me.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedinIn, faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
@@ -55,17 +55,17 @@ class Sidebar extends React.Component {
           </ListLink>
         </ul>
         <ul className={styles.socialList}>
-          <a href="https://github.com/Farbod909">
+          <a href="https://github.com/Farbod909" title="Github">
             <li>
               <FontAwesomeIcon icon={faGithubAlt} />
             </li>
           </a>
-          <a href="https://linkedin.com/in/frafezy">
+          <a href="https://linkedin.com/in/frafezy" title="Linkedin">
             <li>
               <FontAwesomeIcon icon={faLinkedinIn} />
             </li>
           </a>
-          <a href="mailto:rafezyfarbod@gmail.com">
+          <a href="mailto:rafezyfarbod@gmail.com" title="Email">
             <li>
               <FontAwesomeIcon icon={faEnvelope} />
             </li>

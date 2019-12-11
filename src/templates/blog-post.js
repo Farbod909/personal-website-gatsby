@@ -3,11 +3,13 @@ import { graphql, Link } from "gatsby";
 import styles from "./blog-post.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import SEO from "../components/seo";
 
 export default ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div className={styles.blogPost}>
+      <SEO title={post.frontmatter.title} description={post.excerpt} />
       <Link to="/blog" className={styles.backButton}>
         <FontAwesomeIcon icon={faChevronLeft} /> Blog
       </Link>
@@ -27,6 +29,7 @@ export const query = graphql`
         title
         date(formatString: "MMMM D, YYYY")
       }
+      excerpt
     }
   }
 `;
