@@ -22,8 +22,9 @@ const PortfolioItem = props => (
   >
     <div
       style={{
-        height: 60,
-        marginBottom: 20
+        marginBottom: 20,
+        display: "flex",
+        alignItems: "center"
       }}
     >
       <img
@@ -39,7 +40,7 @@ const PortfolioItem = props => (
       <div
         style={{
           paddingLeft: 20,
-          height: 60,
+          minHeight: 60,
           display: "flex",
           flexWrap: "wrap",
           flexDirection: "column",

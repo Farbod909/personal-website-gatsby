@@ -1,10 +1,12 @@
 .blogPost {
   max-width: 700px;
   margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.blogPost * {
-  max-width: 700px;
+.blogPost img {
+  width: 100%;
 }
 
 .backButton {
@@ -18,4 +20,23 @@
 .backButton:hover {
   color: white;
   background-color: #3bba6c;
+}
+
+h1 {
+  font-size: 54px;
+  line-height: 54px;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 42px;
+    line-height: 42px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  h1 {
+    font-size: 38px;
+    line-height: 38px;
+  }
 }
