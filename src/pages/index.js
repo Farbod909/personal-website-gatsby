@@ -24,9 +24,7 @@ const PortfolioItem = props => (
     <div
       style={{
         marginBottom: 30,
-        display: "inline-flex",
         alignItems: "center",
-        marginRight: 50
       }}
       className={styles.portfolioItem}
     >
