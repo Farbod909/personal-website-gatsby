@@ -1,0 +1,9 @@
+.portfolioItem {
+    width: calc(50% - 50px);
+}
+
+@media only screen and (max-width: 975px) {
+    .portfolioItem {
+        width: 100%;
+    }
+}

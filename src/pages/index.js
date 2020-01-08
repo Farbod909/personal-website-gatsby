@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import Content from "../components/Content";
 import PageTitle from "../components/PageTitle";
 import SEO from "../components/seo";
+import styles from "./index.module.css";
 
 import googleImg from "../images/google.png";
 import wdImg from "../images/wd.png";
@@ -22,10 +23,12 @@ const PortfolioItem = props => (
   >
     <div
       style={{
-        marginBottom: 20,
-        display: "flex",
-        alignItems: "center"
+        marginBottom: 30,
+        display: "inline-flex",
+        alignItems: "center",
+        marginRight: 50
       }}
+      className={styles.portfolioItem}
     >
       <img
         src={props.imgsrc}
