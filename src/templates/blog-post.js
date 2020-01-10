@@ -13,10 +13,12 @@ export default ({ data }) => {
       <Link to="/blog" className={styles.backButton}>
         <FontAwesomeIcon icon={faChevronLeft} /> Blog
       </Link>
-      <h1>
-        {post.frontmatter.title}
-      </h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className={post.frontmatter.type === "essay" ? styles.essayStyle : styles.normalStyle}>
+        <h1 style={{marginTop: 40}}>
+          {post.frontmatter.title}
+        </h1>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} style={{marginTop: 30}} />
+      </div>
     </div>
   );
 };
@@ -28,6 +30,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM D, YYYY")
+        type
       }
       excerpt
     }

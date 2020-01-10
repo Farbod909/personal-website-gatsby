@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700|Overpass:400,700,900|Inconsolata&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap');
 
 html {
   padding-top: 30px;
   padding-bottom: 30px;
   font-family: "Lato", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   color: #324332;
   max-width: 1000px;
   margin: auto;
@@ -25,6 +26,7 @@ h6 {
   font-weight: 900;
   margin-top: 25px;
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 h1 {
@@ -44,4 +46,8 @@ h3 {
 
 a {
   color: #3bba6c;
+}
+
+:not(pre) > code[class*="language-"] {
+  word-wrap: break-word;
 }
