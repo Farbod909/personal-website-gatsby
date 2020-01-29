@@ -26,8 +26,9 @@ export default () => {
         </p>
 
         <p>
-          I recently started a venture to end parking problems. It’s called
-          Curbd and it can be simply described as the Airbnb for parking.
+          I recently started a venture to end parking problems. 
+          It’s called <a href="http://curbdparking.com">Curbd</a> and it can be
+          simply described as the Airbnb for parking.
         </p>
 
         <p>

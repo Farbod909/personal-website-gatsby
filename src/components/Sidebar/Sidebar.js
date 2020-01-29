@@ -40,8 +40,7 @@ class Sidebar extends React.Component {
           </span>
         </span>
         <p>
-          4th year Computer Science student at UCI; incoming Software Engineer
-          at Google; little fish in a big pond.
+          4th year Computer Science student at UCI; lifelong learner; blissful ignorance
         </p>
         <ul className={styles.menuList}>
           <ListLink to="/" active={this.props.active === "portfolio"}>

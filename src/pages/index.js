@@ -5,7 +5,7 @@ import PageTitle from "../components/PageTitle";
 import SEO from "../components/seo";
 import styles from "./index.module.css";
 
-import googleImg from "../images/google.png";
+// import googleImg from "../images/google.png";
 import wdImg from "../images/wd.png";
 import bentleyImg from "../images/bentley.png";
 import curbdImg from "../images/curbd.png";
@@ -90,11 +90,11 @@ export default () => {
         />
 
         <h3>Experience</h3>
-        <PortfolioItem
+        {/* <PortfolioItem
           title="Google"
           subtitle="Incoming Software Engineer"
           imgsrc={googleImg}
-        />
+        /> */}
         <PortfolioItem
           title="Western Digital"
           subtitle="Software Engineering Intern"
