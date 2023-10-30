@@ -12,8 +12,7 @@ export default () => {
       <Content>
         <PageTitle>About me</PageTitle>
         <p>
-          Hello! My name is Farbod and I'm a fourth year Computer Science
-          student at UC Irvine specializing in Intelligent Systems.
+          Hello! My name is Farbod and I'm a Software Engineer at Google.
         </p>
         <p>
           I’m from Tabriz, Iran and I’ve moved around all my life. Now I live in
