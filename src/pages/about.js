@@ -12,28 +12,24 @@ export default () => {
       <Content>
         <PageTitle>About me</PageTitle>
         <p>
-          Hello! My name is Farbod and I'm a Software Engineer at Google.
+          Hello! My name is Farbod Rafezy.
         </p>
         <p>
-          I’m from Tabriz, Iran and I’ve moved around all my life. Now I live in
-          Irvine, CA but I'll be moving to the bay area soon.
+          I currently work as a Software Engineer at Google, working on Account Infrastructure. I have industry experience working with C++, Java and Python on a variety of problems including but not limited to:
+          <ul>
+            <li>Web/iOS development</li>
+            <li>Machine Learning</li>
+            <li>Infrastructure/Backend</li>
+            <li>Systems at scale</li>
+          </ul>
+          and I continue to learn every day, even in my free time.
         </p>
         <p>
-          I love going to the beach and swimming when I have free time. I love
-          learning and I want to learn graphic design and how to surf. I love
-          listening to hip hop and R&B and my favorite musical artist is EDEN.
+          When I'm not working, I try to stay active (hiking/biking/swimming/snowboarding), learn new skills, hang with my friends, travel, watch TV, and find joy in the little things.
         </p>
-
         <p>
-          I recently started a venture to end parking problems. 
-          It’s called <a href="http://curbdparking.com">Curbd</a> and it can be
-          simply described as the Airbnb for parking.
-        </p>
-
-        <p>
-          My email is{" "}
-          <a href="mailto:rafezyfarbod@gmail.com">rafezyfarbod@gmail.com</a> if
-          you want to talk more!
+          Please reach me at{" "}
+          <a href="mailto:rafezyfarbod@gmail.com">rafezyfarbod@gmail.com</a> with any questions or comments.
         </p>
       </Content>
     </div>

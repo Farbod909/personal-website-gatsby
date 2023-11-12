@@ -5,7 +5,7 @@ import PageTitle from "../components/PageTitle";
 import SEO from "../components/seo";
 import styles from "./index.module.css";
 
-// import googleImg from "../images/google.png";
+import googleImg from "../images/google.png";
 import wdImg from "../images/wd.png";
 import bentleyImg from "../images/bentley.png";
 import curbdImg from "../images/curbd.png";
@@ -63,6 +63,22 @@ export default () => {
       <Sidebar active="portfolio" />
       <Content>
         <PageTitle>Portfolio</PageTitle>
+        <h3>Experience</h3>
+        <PortfolioItem
+          title="Google"
+          subtitle="Software Engineer"
+          imgsrc={googleImg}
+        />
+        <PortfolioItem
+          title="Western Digital"
+          subtitle="Software Engineering Intern"
+          imgsrc={wdImg}
+        />
+        <PortfolioItem
+          title="Bentley Systems"
+          subtitle="Software Engineering Intern"
+          imgsrc={bentleyImg}
+        />
         <h3>Projects</h3>
         <PortfolioItem
           title="Curbd"
@@ -87,23 +103,6 @@ export default () => {
           subtitle="Share files using short links"
           imgsrc={unofileImg}
           link="http://unofile.net"
-        />
-
-        <h3>Experience</h3>
-        {/* <PortfolioItem
-          title="Google"
-          subtitle="Incoming Software Engineer"
-          imgsrc={googleImg}
-        /> */}
-        <PortfolioItem
-          title="Western Digital"
-          subtitle="Software Engineering Intern"
-          imgsrc={wdImg}
-        />
-        <PortfolioItem
-          title="Bentley Systems"
-          subtitle="Software Engineering Intern"
-          imgsrc={bentleyImg}
         />
       </Content>
     </div>

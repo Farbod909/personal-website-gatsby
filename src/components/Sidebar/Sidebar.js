@@ -34,13 +34,13 @@ class Sidebar extends React.Component {
         ></img>
         <h3 style={{ fontSize: 28 }}>Farbod Rafezy</h3>
         <span style={{ color: "gray" }}>
-          Irvine, CA{" "}
+          San Francisco, CA{" "}
           <span role="img" aria-label="pin">
             📍
           </span>
         </span>
         <p>
-          4th year Computer Science student at UCI; lifelong learner; blissful ignorance
+          Software Engineer @ Google
         </p>
         <ul className={styles.menuList}>
           <ListLink to="/" active={this.props.active === "portfolio"}>
